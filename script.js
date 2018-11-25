@@ -12,7 +12,7 @@ var behaviors = [
         if (keysPressed.keys[39]) {
             hero.x = hero.x + 9;
         }
-        if (keysPressed.keys[32] && ticks - 40 >= ticksOnLastFire) {
+        if (keysPressed.keys[32] && ticks - 25 >= ticksOnLastFire) {
             createBullet();
             laser.play();
         }
