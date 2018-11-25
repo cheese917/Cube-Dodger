@@ -83,7 +83,7 @@ function createEnemy() {
 
 function createBullet() {
     ticksOnLastFire = ticks;
-    bullet = new component(15, 15, hero.x + 17, window.innerHeight - 100, "#00ff00", -30, "bullets", "rect");
+    bullet = new component(15, 15, hero.x + 17, window.innerHeight - 100, "#00ff00", -25, "bullets", "rect");
 }
 // Creates intial components
 function createComponents() {
