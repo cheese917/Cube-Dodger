@@ -107,6 +107,7 @@ function gameOverEvents() {
             startGame();
             points = 0;
             ticks = 0;
+            ticksOnLastFire = 0;
             deleteAllComponents();
         }
     })
