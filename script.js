@@ -108,7 +108,7 @@ function gameOverEvents() {
         if(!restarted){    
             restarted = true;
             startGame();
-            score = 0;
+            points = 0;
             deleteAllComponents();
         }
     })
