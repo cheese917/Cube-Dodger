@@ -106,6 +106,7 @@ function gameOverEvents() {
             restarted = true;
             startGame();
             points = 0;
+            ticks = 0;
             deleteAllComponents();
         }
     })
