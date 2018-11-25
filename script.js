@@ -36,13 +36,13 @@ var behaviors = [
     function spawnEnemy() {
         var spawnRate = 10;
         if (ticks % spawnRate == 0) {
-            if (ticks >= 1000 && Math.floor(Math.random() * 2) == 0){
+            if (ticks >= 500){
                 createEnemy.hardEnemy();
             }else{
                 createEnemy();
             }
         }
-        if (ticks % 700 == 0 && spawnRate >= 4) {
+        if (ticks % 500 == 0 && spawnRate >= 4) {
             spawnRate -= 1;
         }
         
@@ -59,7 +59,6 @@ var behaviors = [
             if (components[e].group == "enemys" && components[e].hitObject(hero)) {
                 gameArea.gameOver();
                 explosion.play();
-                gameover.play();
             } 
             for(b in components) {
                 if(components[b].group == "bullets" && components[e].group == "enemys" && components[e].hitObject(components[b])){
@@ -76,8 +75,8 @@ var behaviors = [
 ]
 function createEnemy() {
     enemy = new component(40, 40, Math.floor(Math.random() * gameArea.canvas.width), 0, "#ff0000", 10, "enemys", "rect");
-    hardEnemy = function() {
-        enemy = new component(60, 60, Math.floor(Math.random() * gameArea.canvas.width), 0, "#ff9900", 14, "enemys", "rect");
+    createEnemy.hardEnemy = function() {
+        enemy = new component(60, 60, Math.floor(Math.random() * gameArea.canvas.width), 0, "#ff9900", 12, "enemys", "rect");
     }
 }
 
@@ -93,8 +92,6 @@ function createComponents() {
     music.play();
     explosion = new sound ("sound/explosion.mp3", false);
     laser = new sound ("sound/laser.mp3", false);
-    gameover = new sound("sound/gameover.mp3");
-
 }
 // Runs when gameOver function in gameArea is called 
 function gameOverEvents() {
