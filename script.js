@@ -36,7 +36,7 @@ var behaviors = [
     function spawnEnemy() {
         var spawnRate = 10;
         if (ticks % spawnRate == 0) {
-            if (ticks >= 500){
+            if (ticks >= 500 && Math.floor(Math.random() * 5) == 1){
                 createEnemy.hardEnemy();
             }else{
                 createEnemy();
@@ -76,7 +76,7 @@ var behaviors = [
 function createEnemy() {
     enemy = new component(40, 40, Math.floor(Math.random() * gameArea.canvas.width), 0, "#ff0000", 10, "enemys", "rect");
     createEnemy.hardEnemy = function() {
-        enemy = new component(60, 60, Math.floor(Math.random() * gameArea.canvas.width), 0, "#ff9900", 12, "enemys", "rect");
+        enemy = new component(30, 30, Math.floor(Math.random() * gameArea.canvas.width), 0, "#ff9900", 10, "enemys", "rect");
     }
 }
 
